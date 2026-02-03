@@ -1,0 +1,28 @@
+.hero-section {
+  background: linear-gradient(135deg, #4f46e5, #6366f1);
+  border-radius: 18px;
+  margin: 2rem;
+}
+.testimonial-card {
+  border-radius: 14px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+}
+.get-started-box {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  border-radius: 18px;
+  padding: 3.5rem 2rem;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+.card img {
+  height: 220px;
+  object-fit: cover;
+}
+
+.card {
+  border-radius: 14px;
+}

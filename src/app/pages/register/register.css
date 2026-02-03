@@ -1,0 +1,37 @@
+/* SAME STRUCTURE, DIFFERENT BACKGROUND IMAGE */
+
+.auth-page {
+  min-height: 100vh;
+  background: url('https://images.unsplash.com/photo-1499636136210-6f4ee915583e')
+    no-repeat center center / cover;
+  position: relative;
+}
+
+.auth-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.auth-container {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.auth-card {
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(12px);
+  padding: 3rem;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.auth-card input {
+  border-radius: 10px;
+}

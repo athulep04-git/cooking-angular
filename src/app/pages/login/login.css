@@ -1,0 +1,38 @@
+.auth-page {
+  min-height: 100vh;
+  background: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836')
+    no-repeat center center / cover;
+  position: relative;
+}
+
+/* Dark overlay */
+.auth-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+/* CENTERING */
+.auth-container {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+/* Glass card */
+.auth-card {
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(12px);
+  padding: 3rem;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.auth-card input {
+  border-radius: 10px;
+}

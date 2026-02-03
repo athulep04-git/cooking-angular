@@ -1,0 +1,25 @@
+.search-box {
+  max-width: 320px;
+  border-radius: 25px;
+  padding: 10px 16px;
+}
+
+.filter-box {
+  border-radius: 14px;
+}
+
+.recipe-card {
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.recipe-card img {
+  height: 200px;
+  object-fit: cover;
+}
+
+.recipe-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+}

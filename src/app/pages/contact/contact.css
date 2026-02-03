@@ -1,0 +1,15 @@
+.contact-hero {
+  background: linear-gradient(135deg, #2ee3ff, #a9fff8);
+}
+
+.contact-card {
+  background: #ffffff;
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.contact-card input,
+.contact-card textarea {
+  border-radius: 10px;
+}
