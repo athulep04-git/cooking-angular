@@ -1,0 +1,80 @@
+<div class="row g-0 admin-wrapper">
+  <div class="col-2 bg-primary min-vh-100">
+    <app-sidebar></app-sidebar>
+  </div>
+
+  <div class="col-10 admin-content">
+
+    <h3 class="page-title">Add Recipe Details</h3>
+
+    <div class="card recipe-card">
+      <div class="row g-3">
+
+        <div class="col-md-6">
+          <input type="text" class="form-control" placeholder="Recipe Name">
+        </div>
+
+        <div class="col-md-6">
+          <input type="text" class="form-control" placeholder="Cooking Time">
+        </div>
+
+        <div class="col-md-6">
+          <input type="text" class="form-control" placeholder="Preparation Time">
+        </div>
+
+        <div class="col-md-6">
+          <input type="text" class="form-control" placeholder="Recipe Servings">
+        </div>
+
+        <div class="col-md-6">
+          <input type="text" class="form-control" placeholder="Choose Cuisine Type">
+        </div>
+
+        <div class="col-md-6">
+          <input type="text" class="form-control" placeholder="Mode of Cooking">
+        </div>
+
+        <div class="col-md-6">
+          <input type="text" class="form-control" placeholder="Recipe Image URL">
+        </div>
+
+        <div class="col-md-6">
+          <input type="text" class="form-control" placeholder="Calories">
+        </div>
+
+        <div class="col-md-6 position-relative">
+          <textarea class="form-control" rows="4" placeholder="Ingredients"></textarea>
+          <button class="btn btn-success add-btn">+</button>
+        </div>
+
+        <div class="col-md-6 position-relative">
+          <textarea class="form-control" rows="4" placeholder="Cooking Instructions"></textarea>
+          <button class="btn btn-success add-btn">+</button>
+        </div>
+
+        <div class="col-12">
+          <div class="meal-box">
+            <label class="fw-semibold mb-2 d-block">Choose Meal Type :</label>
+
+            <div class="meal-options">
+              <label><input type="checkbox"> Dinner</label>
+              <label><input type="checkbox"> Lunch</label>
+              <label><input type="checkbox"> Snack</label>
+              <label><input type="checkbox"> Dessert</label>
+              <label><input type="checkbox"> Side Dish</label>
+              <label><input type="checkbox"> Appetizer</label>
+              <label><input type="checkbox"> Breakfast</label>
+              <label><input type="checkbox"> Beverage</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 text-center mt-4">
+          <button class="btn btn-success px-5">Add Recipe</button>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>

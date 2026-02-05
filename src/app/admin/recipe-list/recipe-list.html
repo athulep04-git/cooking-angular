@@ -1,0 +1,70 @@
+<div class="row g-0 admin-wrapper">
+  <!-- Sidebar -->
+  <div class="col-2 bg-primary min-vh-100">
+    <app-sidebar></app-sidebar>
+  </div>
+
+  <!-- Content -->
+  <div class="col-10 admin-content">
+
+    <!-- Title + Add Button -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h3 class="page-title m-0">Recipe List</h3>
+
+      <a routerLink="/admin/recipe/add" class="btn btn-success">
+        + Add Recipe
+      </a>
+    </div>
+
+
+    <div class="row mb-3">
+      <div class="col-md-4 ms-auto">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="🔍 Search recipe"
+        />
+      </div>
+    </div>
+
+
+    <div class="card recipe-card">
+      <table class="table mb-0 align-middle">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Image</th>
+            <th>Cuisine</th>
+            <th class="text-center">Action</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td><strong>Classic Margherita Pizza</strong></td>
+            <td>
+              <img
+                src=""
+                class="recipe-img"
+              />
+            </td>
+            <td>Italian</td>
+            <td class="text-center">
+              <a
+                routerLink="/admin/recipe/edit/1"
+                class="btn btn-outline-primary btn-sm me-2"
+                >✎</a
+              >
+              <button class="btn btn-outline-danger btn-sm">
+                🗑
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>

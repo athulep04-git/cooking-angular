@@ -1,0 +1,51 @@
+.page-title {
+  text-align: center;
+  color: #004cff;
+  font-weight: 600;
+}
+
+.admin-wrapper {
+  min-height: 100vh;
+  background-color: #f5f7fb;
+}
+
+.admin-content {
+  padding: 30px;
+}
+
+
+.recipe-card {
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  padding: 10px;
+}
+
+.table thead {
+  background-color: #f1f5ff;
+}
+
+.table td,
+.table th {
+  vertical-align: middle;
+}
+
+.recipe-img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 5px 12px rgba(0,0,0,0.15);
+}
+
+.btn-outline-primary,
+.btn-outline-danger {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  padding: 0;
+}
+
+tbody tr:hover {
+  background-color: #f8f9ff;
+  transition: 0.2s;
+}

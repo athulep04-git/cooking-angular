@@ -1,0 +1,38 @@
+
+.page-title {
+  text-align: center;
+  color: #004cff;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+.admin-wrapper {
+  min-height: 100vh;
+  background-color: #f5f7fb;
+}
+
+.admin-content {
+  padding: 30px;
+}
+
+.request-card {
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  padding: 10px;
+}
+
+.table thead {
+  background-color: #f1f5ff;
+}
+
+.table td,
+.table th {
+  vertical-align: middle;
+}
+
+.btn-outline-success,
+.btn-outline-danger {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  padding: 0;
+}
