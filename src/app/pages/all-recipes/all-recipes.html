@@ -1,4 +1,5 @@
 <app-header></app-header>
+
 <section class="py-4">
   <div class="container-fluid px-4">
 
@@ -7,14 +8,14 @@
 
       <input
         type="text"
-        class="form-control search-box"
+        class="form-control search-box w-25"
         placeholder="Search recipes..."
+
       />
     </div>
 
     <div class="row">
 
-  
       <div class="col-lg-3 mb-4">
         <div class="card shadow-sm p-3 filter-box">
           <h6 class="fw-bold mb-3">FILTERS</h6>
@@ -56,46 +57,20 @@
       <div class="col-lg-9">
         <div class="row g-4">
 
-   
-          <div class="col-lg-4 col-md-6">
-            <div class="card recipe-card shadow-sm">
-              <img
-                src="https://images.unsplash.com/photo-1548365328-8b849e6c7c63"
-                class="card-img-top"
-              />
-              <div class="card-body text-center">
-                <h6 class="fw-bold">Classic Margherita Pizza</h6>
+          @for (item of recipes; track $index) {
+            <div class="col-lg-4 col-md-6">
+              <div class="card recipe-card shadow-sm h-100">
+                <img
+                  [src]="item.image"
+                  class="card-img-top"
+                  alt="recipe image"
+                />
+                <div class="card-body text-center">
+                  <h6 class="fw-bold">{{ item.name }}</h6>
+                </div>
               </div>
             </div>
-          </div>
-
-
-          <div class="col-lg-4 col-md-6">
-            <div class="card recipe-card shadow-sm">
-              <img
-                src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd"
-                class="card-img-top"
-              />
-              <div class="card-body text-center">
-                <h6 class="fw-bold">Vegetarian Stir-Fry</h6>
-              </div>
-            </div>
-          </div>
-
-  
-          <div class="col-lg-4 col-md-6">
-            <div class="card recipe-card shadow-sm">
-              <img
-                src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e"
-                class="card-img-top"
-              />
-              <div class="card-body text-center">
-                <h6 class="fw-bold">Chocolate Chip Cookies</h6>
-              </div>
-            </div>
-          </div>
-
-
+          }
 
         </div>
       </div>
@@ -103,4 +78,5 @@
     </div>
   </div>
 </section>
+
 <app-footer></app-footer>

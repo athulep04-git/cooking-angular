@@ -1,34 +1,33 @@
 <section class="auth-page">
   <div class="auth-overlay"></div>
-
   <div class="auth-container">
     <div class="auth-card">
-
       <h3 class="fw-bold text-white mb-4">Login here...</h3>
+      <form [formGroup]="loginForm" (ngSubmit)="login()">
+        <input
+          type="email"
+          class="form-control mb-3"
+          placeholder="Email"
+          formControlName="email"
+        />
 
-      <input
-        type="email"
-        class="form-control mb-3"
-        placeholder="Email"
-      />
+        <input
+          type="password"
+          class="form-control mb-4"
+          placeholder="Password"
+          formControlName="password"
+        />
 
-      <input
-        type="password"
-        class="form-control mb-4"
-        placeholder="Password"
-      />
-
-      <button class="btn btn-success w-100 mb-3">
-        Sign In
-      </button>
-
+        <button type="submit" class="btn btn-success w-100 mb-3">
+          Sign In
+        </button>
+      </form>
       <p class="text-white small mb-0">
         New to here?
         <a routerLink="/register" class="text-warning fw-semibold">
           Register Now
         </a>
       </p>
-
     </div>
   </div>
 </section>

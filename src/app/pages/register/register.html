@@ -6,40 +6,41 @@
 
       <h3 class="fw-bold text-white mb-4">Create Account</h3>
 
-      <input
-        type="text"
-        class="form-control mb-3"
-        placeholder="Full Name"
-      />
+      <form [formGroup]="registerForm" (ngSubmit)="register()">
 
-      <input
-        type="email"
-        class="form-control mb-3"
-        placeholder="Email"
-      />
+        <input
+          type="text"
+          class="form-control mb-3"
+          placeholder="Full Name"
+          formControlName="username"
+        />
 
-      <input
-        type="password"
-        class="form-control mb-3"
-        placeholder="Password"
-      />
+        <input
+          type="email"
+          class="form-control mb-3"
+          placeholder="Email"
+          formControlName="email"
+        />
 
-      <input
-        type="password"
-        class="form-control mb-4"
-        placeholder="Confirm Password"
-      />
+        <input
+          type="password"
+          class="form-control mb-3"
+          placeholder="Password"
+          formControlName="password"
+        />
 
-      <button class="btn btn-warning w-100 mb-3">
-        Register
-      </button>
+        <button type="submit" class="btn btn-warning w-100 mb-3">
+          Register
+        </button>
 
-      <p class="text-white small mb-0">
-        Already have an account?
-        <a routerLink="/login" class="text-warning fw-semibold">
-          Login
-        </a>
-      </p>
+        <p class="text-white small mb-0">
+          Already have an account?
+          <a routerLink="/login" class="text-warning fw-semibold">
+            Login
+          </a>
+        </p>
+
+      </form>
 
     </div>
   </div>
