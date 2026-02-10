@@ -10,6 +10,8 @@ import { Router, RouterLink } from '@angular/router';
   styleUrl: './login.css',
 })
 export class Login {
+  token:any="";
+  userDetails:any={};
   loginForm: FormGroup;
   constructor(
     private fb: FormBuilder,
@@ -29,6 +31,10 @@ export class Login {
       this.api.loginUser({email,password}).subscribe({
         next:(res:any) => {
           console.log(res);
+          this.token=res.token
+          this.userDetails=res.existingUser
+          sessionStorage.setItem("token",this.token)
+          sessionStorage.setItem("userDetails",JSON.stringify(this.userDetails))
           alert("Login successful");
           this.route.navigate(['/']);
         },

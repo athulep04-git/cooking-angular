@@ -1,53 +1,51 @@
-<section class="py-4">
-  <div class="container">
 
-   
-    <a routerLink="/All-Recipes" class="btn btn-outline-warning mb-4 rounded-pill">
+<section class="py-4">
+  <div class="container px-4">
+
+    <a
+      routerLink="/all-recipes"
+      class="btn btn-outline-warning mb-4 rounded-pill"
+    >
       ← Back to Recipes
     </a>
-
     <div class="row g-5">
-
-   
       <div class="col-lg-6">
         <div class="recipe-image-wrapper">
           <img
-            src="https://i.redd.it/vzx2h4v73cge1.jpeg"
-            class="img-fluid recipe-image"
-            alt="Classic Margherita Pizza"
+            [src]="recipe.image"
+            class="img-fluid recipe-image rounded shadow"
+            alt="recipe image"
           />
         </div>
       </div>
-
-
       <div class="col-lg-6">
 
-        <h2 class="fw-bold mb-4">Classic Margherita Pizza</h2>
-
-
+        <h2 class="fw-bold mb-4">
+          {{ recipe.name }}
+        </h2>
         <div class="row g-3 mb-4">
 
           <div class="col-4">
             <div class="info-card text-center">
               🍝
               <p class="fw-semibold mb-0">Cuisine</p>
-              <small class="text-muted">Italian</small>
+              <small class="text-muted">{{ recipe.cuisine }}</small>
             </div>
           </div>
 
           <div class="col-4">
             <div class="info-card text-center">
-              🍔
+              🍽
               <p class="fw-semibold mb-0">Servings</p>
-              <small class="text-muted">4</small>
+              <small class="text-muted">{{ recipe.servings }}</small>
             </div>
           </div>
 
           <div class="col-4">
             <div class="info-card text-center">
               🥦
-              <p class="fw-semibold mb-0">Mode</p>
-              <small class="text-muted">Veg</small>
+              <p class="fw-semibold mb-0">Difficulty</p>
+              <small class="text-muted">{{ recipe.difficulty }}</small>
             </div>
           </div>
 
@@ -55,7 +53,9 @@
             <div class="info-card text-center">
               ⏱
               <p class="fw-semibold mb-0">Prep</p>
-              <small class="text-muted">15 mins</small>
+              <small class="text-muted">
+                {{ recipe.prepTimeMinutes }} mins
+              </small>
             </div>
           </div>
 
@@ -63,7 +63,9 @@
             <div class="info-card text-center">
               🔥
               <p class="fw-semibold mb-0">Cook</p>
-              <small class="text-muted">20 mins</small>
+              <small class="text-muted">
+                {{ recipe.cookTimeMinutes }} mins
+              </small>
             </div>
           </div>
 
@@ -71,119 +73,83 @@
             <div class="info-card text-center">
               ⚡
               <p class="fw-semibold mb-0">Calories</p>
-              <small class="text-muted">250 kcal</small>
+              <small class="text-muted">
+                {{ recipe.caloriesPerServing }} kcal
+              </small>
             </div>
           </div>
 
         </div>
-
-
         <h5 class="fw-bold mb-3">🧂 Ingredients</h5>
 
         <ul class="list-group ingredient-list mb-4">
-          <li class="list-group-item">🍕 Pizza dough</li>
-          <li class="list-group-item">🍅 Tomato sauce</li>
-          <li class="list-group-item">🧀 Fresh mozzarella cheese</li>
-          <li class="list-group-item">🌿 Fresh basil leaves</li>
-          <li class="list-group-item">🫒 Olive oil</li>
-          <li class="list-group-item">🧂 Salt and pepper to taste</li>
+          @for (item of recipe.ingredients; track $index) {
+            <li class="list-group-item">
+               {{ item }}
+            </li>
+          }
         </ul>
-
-
         <div class="d-flex gap-3 mb-3">
           <button class="btn btn-success px-4 rounded-pill">
-            ⬇ Download
+            Download
           </button>
 
           <button class="btn btn-primary px-4 rounded-pill">
-            ❤️ Save
+            Save
           </button>
         </div>
-
-
         <div class="d-flex gap-2 mb-5">
-          <span class="badge rounded-pill bg-warning text-dark">🍰 Dessert</span>
-          <span class="badge rounded-pill bg-light text-dark border">😊 Easy</span>
-          <span class="badge rounded-pill bg-light text-dark border">🔥 Popular</span>
+          @for (tag of recipe.tags; track $index) {
+            <span class="badge rounded-pill bg-warning text-dark">
+              {{ tag }}
+            </span>
+          }
         </div>
 
       </div>
     </div>
-
-
     <div class="mt-5">
-      <h5 class="fw-bold mb-3">👨‍🍳 Cooking Instructions</h5>
+      <h5 class="fw-bold mb-3"> Cooking Instructions</h5>
 
       <ol class="list-group list-group-numbered instruction-list">
-        <li class="list-group-item">
-          Preheat the oven to 475°F (245°C).
-        </li>
-        <li class="list-group-item">
-          Roll out the pizza dough and spread tomato sauce evenly.
-        </li>
-        <li class="list-group-item">
-          Top with fresh mozzarella slices and basil leaves.
-        </li>
-        <li class="list-group-item">
-          Drizzle with olive oil and season with salt and pepper.
-        </li>
-        <li class="list-group-item">
-          Bake for 12–15 minutes until golden brown.
-        </li>
-        <li class="list-group-item">
-          Slice and serve hot.
-        </li>
+        @for (step of recipe.instructions; track $index) {
+          <li class="list-group-item">
+            {{ step }}
+          </li>
+        }
       </ol>
     </div>
+    <div class="mt-4 d-flex gap-3 align-items-center">
+      @for (meal of recipe.mealType; track $index) {
+        <span class="badge rounded-pill bg-light text-dark border">
+          🍽 {{ meal }}
+        </span>
+      }
 
+      <span class="badge rounded-pill bg-success">
+        ⭐ {{ recipe.rating }} ({{ recipe.reviewCount }} reviews)
+      </span>
+    </div>
     <section class="mt-5">
       <h5 class="fw-bold mb-4">Related Recipes</h5>
 
       <div class="row g-4">
-
-        <div class="col-lg-3 col-md-6">
-          <div class="card related-card shadow-sm">
-            <img src="https://i.redd.it/vzx2h4v73cge1.jpeg" class="card-img-top">
-            <div class="card-body text-center">
-              <h6 class="fw-bold mb-0">Classic Margherita Pizza</h6>
+        @for (item of relatedRecipe; track $index) {
+          <div class="col-lg-3 col-md-6">
+            <div class="card related-card shadow-sm h-100">
+              <img
+                [src]="item.image"
+                class="card-img-top"
+              />
+              <div class="card-body text-center">
+                <h6 class="fw-bold mb-0">{{item.name}}</h6>
+              </div>
             </div>
           </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6">
-          <div class="card related-card shadow-sm">
-            <img src="https://i.redd.it/vzx2h4v73cge1.jpeg" class="card-img-top">
-            <div class="card-body text-center">
-              <h6 class="fw-bold mb-0">Classic Margherita Pizza</h6>
-            </div>
-          </div>
-        </div>
-
-
-
-        <div class="col-lg-3 col-md-6">
-          <div class="card related-card shadow-sm">
-            <img src="https://i.redd.it/vzx2h4v73cge1.jpeg" class="card-img-top">
-            <div class="card-body text-center">
-              <h6 class="fw-bold mb-0">Classic Margherita Pizza</h6>
-            </div>
-          </div>
-        </div>
-
-
-
-       <div class="col-lg-3 col-md-6">
-          <div class="card related-card shadow-sm">
-            <img src="https://i.redd.it/vzx2h4v73cge1.jpeg" class="card-img-top">
-            <div class="card-body text-center">
-              <h6 class="fw-bold mb-0">Classic Margherita Pizza</h6>
-            </div>
-          </div>
-        </div>
-
-
+        }
       </div>
     </section>
 
   </div>
 </section>
+

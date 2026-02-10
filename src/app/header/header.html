@@ -29,8 +29,18 @@
             <i class="bi bi-person"></i>
           </a>
           <ul class="dropdown-menu dropdown-menu-end">
-            <li><a class="dropdown-item" routerLink="/login">Login</a></li>
+            @if(!token){
+              <li><a class="dropdown-item" routerLink="/login">Login</a></li>
             <li><a class="dropdown-item" routerLink="/register">Register</a></li>
+            <li><a class="dropdown-item" routerLink="/login">profile</a></li>
+            }
+            @else{
+                <li><a class="dropdown-item" routerLink="/profile">profile</a></li>
+            <li><a class="dropdown-item" routerLink="/all-recipes">view all</a></li>
+            <li><a class="dropdown-item" routerLink="/login">logout</a></li>
+            }
+            
+           
           </ul>
         </li>
       </ul>
