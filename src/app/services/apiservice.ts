@@ -36,5 +36,7 @@ export class Apiservice {
     relatedRecipeAPI(cuisine:any){
     return this.http.get(`${this.baseURL}/api/related-recipe?cuisine=${cuisine}`,this.appendToken())
   }
-    
+  addSavedRecipe(id:any,reqBody:any){
+    return this.http.post(`${this.baseURL}/api/addsaved-recipe/${id}`,reqBody,this.appendToken())
+  }
 }
