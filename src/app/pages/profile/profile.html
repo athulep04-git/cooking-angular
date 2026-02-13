@@ -1,0 +1,72 @@
+<div class="container my-5">
+
+  <div class="row g-4">
+    <div class="col-lg-5">
+      <div class="card shadow-lg rounded-4 p-4 text-center">
+        <h4 class="fw-bold mb-4">Update Profile</h4>
+        <div class="mb-4">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQF02Jj8T2t7PdkytAw42HDuuSz7yXguKn8Lg&s"
+            class="rounded-circle border"
+            width="120"
+            height="120"
+            alt="profile"
+          />
+        </div>
+
+        <input
+          type="text"
+          class="form-control mb-3"
+          placeholder="Enter Name"
+        />
+
+        <input
+          type="email"
+          class="form-control mb-4"
+          placeholder="Enter Email"
+        />
+
+        <div class="d-flex justify-content-center gap-3">
+          <button class="btn btn-success px-4 rounded-pill">
+            Update Profile
+          </button>
+          <button class="btn btn-outline-secondary px-4 rounded-pill">
+            Cancel
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="col-lg-7">
+      <div class="card shadow-lg border-0 rounded-4 p-4">
+
+        <h4 class="fw-bold mb-4 text-center">
+          Downloaded Recipe List
+        </h4>
+
+        <div class="row g-4">
+@for (item of downloadData; track $index) {
+    <div class="col-md-6">
+            <div class="card border-0 shadow-sm h-100 rounded-4">
+              <img
+                [src]="item.image"
+                class="card-img-top rounded-top-4"
+                height="180"
+                style="object-fit: cover"
+              />
+              <div class="card-body text-center">
+                <h6 class="fw-bold">{{item.name}}</h6>
+                <button class="btn btn-danger btn-sm  mt-2 "(click)="deleteDownload(item._id)">
+                  Delete
+                </button>
+              </div>
+            </div>
+          </div>
+}
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

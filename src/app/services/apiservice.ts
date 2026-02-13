@@ -35,8 +35,27 @@ export class Apiservice {
     }
     relatedRecipeAPI(cuisine:any){
     return this.http.get(`${this.baseURL}/api/related-recipe?cuisine=${cuisine}`,this.appendToken())
-  }
-  addSavedRecipe(id:any,reqBody:any){
+   }
+    addSavedRecipe(id:any,reqBody:any){
     return this.http.post(`${this.baseURL}/api/addsaved-recipe/${id}`,reqBody,this.appendToken())
-  }
+   }
+   getSavedRecipeAPI() {
+    return this.http.get(`${this.baseURL}/api/viewsaved-recipe`,this.appendToken()
+    );
+    }
+    deleteSavedRecipeAPI(id:any) {
+    return this.http.delete(`${this.baseURL}/api/deletesaved-recipe/${id}`,this.appendToken()
+    );
+    }
+     addDownloadRecipeAPI(id:any,reqBody:any){
+    return this.http.post(`${this.baseURL}/api/addDownload/${id}`,reqBody,this.appendToken())
+   }
+   getdownloadRecipeAPI() {
+    return this.http.get(`${this.baseURL}/api/getDownload`,this.appendToken()
+    );
+    }
+    deleteDownloadRecipeAPI(id:any) {
+    return this.http.delete(`${this.baseURL}/api/deleteDownload/${id}`,this.appendToken()
+    );
+    }
 }

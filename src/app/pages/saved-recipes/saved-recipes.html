@@ -6,21 +6,23 @@
 
     <div class="row g-4 justify-content-center">
 
-
-      <div class="col-md-4 col-lg-3">
+@for (item of savedRecipe; track $index) {
+<div class="col-md-4 col-lg-3">
         <div class="card saved-card">
           <img
-            src="https://images.unsplash.com/photo-1548365328-8b849e6c7c63"
+            [src]="item.image"
             class="card-img-top"
             alt="Classic Margherita Pizza"
           />
 
           <div class="card-body d-flex justify-content-between align-items-center">
-            <h6 class="fw-bold mb-0">Classic Margherita Pizza</h6>
-            <button class="btn btn-sm btn-danger">🗑</button>
+            <h6 class="fw-bold mb-0">{{item.name}}</h6>
+            <button class="btn btn-sm btn-danger" (click)="deleteSavedRecipe(item._id)">🗑</button>
           </div>
         </div>
       </div>
+}
+      
     </div>
 
   </div>

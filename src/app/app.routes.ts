@@ -8,6 +8,7 @@ import { ViewRecipe } from './pages/view-recipe/view-recipe';
 import { About } from './pages/about/about';
 import { Contact } from './pages/contact/contact';
 import { SavedRecipes } from './pages/saved-recipes/saved-recipes';
+import { Profile } from './pages/profile/profile';
 
 
 export const routes: Routes = [
@@ -38,6 +39,9 @@ export const routes: Routes = [
     },
     {
         path:'saved-recipes',component:SavedRecipes
+    },
+     {
+        path:'profile',component:Profile
     },
     {
         path:'**',component:Pnf
