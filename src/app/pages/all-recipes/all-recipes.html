@@ -10,7 +10,7 @@
         type="text"
         class="form-control search-box w-25"
         placeholder="Search recipes..."
-
+        [(ngModel)]="searchKey"
       />
     </div>
 
@@ -32,9 +32,10 @@
               Cuisine Type
             </button>
             <ul class="dropdown-menu w-100">
-              <li><a class="dropdown-item">Indian</a></li>
-              <li><a class="dropdown-item">Italian</a></li>
-              <li><a class="dropdown-item">Chinese</a></li>
+             @for (item of cuisineType; track $index) {
+               <li (click)="filterRecipe('cuisine',item)"><a class="dropdown-item">{{item}}</a></li>
+             }
+              
             </ul>
           </div>
 
@@ -46,9 +47,9 @@
               Meal Type
             </button>
             <ul class="dropdown-menu w-100">
-              <li><a class="dropdown-item">Breakfast</a></li>
-              <li><a class="dropdown-item">Lunch</a></li>
-              <li><a class="dropdown-item">Dinner</a></li>
+              @for (item of updatedMealArray; track $index) {
+                <li (click)="filterRecipe('mealType',item)"><a class="dropdown-item">{{item}}</a></li>
+              }
             </ul>
           </div>
         </div>
@@ -57,7 +58,7 @@
       <div class="col-lg-9">
         <div class="row g-4">
 
-          @for (item of recipes; track $index) {
+          @for (item of recipes| search:searchKey; track $index) {
             <div class="col-lg-4 col-md-6">
               <div (click)="viewRecipe(item._id)" class="card recipe-card shadow-sm h-100">
                 <img
