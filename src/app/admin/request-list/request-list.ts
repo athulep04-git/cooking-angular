@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Sidebar } from "../sidebar/sidebar";
+import { Apiservice } from '../../services/apiservice';
 
 @Component({
   selector: 'app-request-list',
@@ -7,6 +8,22 @@ import { Sidebar } from "../sidebar/sidebar";
   templateUrl: './request-list.html',
   styleUrl: './request-list.css',
 })
-export class RequestList {
-
+export class RequestList implements OnInit{
+ testimony:any=[]
+constructor(private api:Apiservice){}
+  ngOnInit(): void {
+    this.getAllTestimony()
+  }
+  getAllTestimony(){
+    this.api.getAllTestimonyAPI().subscribe({
+      next:(res:any)=>{
+        console.log(res);
+        this.testimony=res
+      },
+      error:(err)=>{
+        console.log(err);
+        
+      }
+    })
+  }
 }

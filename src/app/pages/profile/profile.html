@@ -1,72 +1,62 @@
 <div class="container my-5">
-
   <div class="row g-4">
     <div class="col-lg-5">
       <div class="card shadow-lg rounded-4 p-4 text-center">
         <h4 class="fw-bold mb-4">Update Profile</h4>
+
         <div class="mb-4">
-          <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQF02Jj8T2t7PdkytAw42HDuuSz7yXguKn8Lg&s"
-            class="rounded-circle border"
-            width="120"
-            height="120"
-            alt="profile"
-          />
+          <label for="imgInput" style="cursor: pointer">
+            <img
+              [src]="
+                preview
+                  ? preview
+                  : userData.profilePic
+                    ? baseUrl + userData.profilePic
+                    : 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'
+              "
+              class="rounded-circle border shadow"
+              width="150"
+              height="150"
+            />
+          </label>
+
+          <input id="imgInput" type="file" hidden (change)="onFileChange($event)" />
         </div>
 
-        <input
-          type="text"
-          class="form-control mb-3"
-          placeholder="Enter Name"
-        />
+        <input type="text" class="form-control mb-3" [(ngModel)]="userData.username" />
 
-        <input
-          type="email"
-          class="form-control mb-4"
-          placeholder="Enter Email"
-        />
+        <input type="email" class="form-control mb-4" [(ngModel)]="userData.email" />
 
-        <div class="d-flex justify-content-center gap-3">
-          <button class="btn btn-success px-4 rounded-pill">
-            Update Profile
-          </button>
-          <button class="btn btn-outline-secondary px-4 rounded-pill">
-            Cancel
-          </button>
-        </div>
-
+        <button class="btn btn-success rounded-pill" (click)="updateProfile()">
+          Update Profile
+        </button>
       </div>
     </div>
 
     <div class="col-lg-7">
-      <div class="card shadow-lg border-0 rounded-4 p-4">
-
-        <h4 class="fw-bold mb-4 text-center">
-          Downloaded Recipe List
-        </h4>
+      <div class="card shadow-lg p-4">
+        <h4 class="fw-bold text-center mb-4">Downloaded Recipe List</h4>
 
         <div class="row g-4">
-@for (item of downloadData; track $index) {
-    <div class="col-md-6">
-            <div class="card border-0 shadow-sm h-100 rounded-4">
-              <img
-                [src]="item.image"
-                class="card-img-top rounded-top-4"
-                height="180"
-                style="object-fit: cover"
-              />
-              <div class="card-body text-center">
-                <h6 class="fw-bold">{{item.name}}</h6>
-                <button class="btn btn-danger btn-sm  mt-2 "(click)="deleteDownload(item._id)">
-                  Delete
-                </button>
+          @for (item of downloadData; track $index) {
+            <div class="col-md-6">
+              <div class="card shadow-sm h-100">
+                <img [src]="item.image" height="180" style="object-fit: cover" />
+
+                <div class="card-body text-center">
+                  <h6>
+                    {{ item.name }}
+                  </h6>
+
+                  <button class="btn btn-danger btn-sm" (click)="deleteDownload(item._id)">
+                    Delete
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-}
+          }
         </div>
       </div>
     </div>
-
   </div>
 </div>

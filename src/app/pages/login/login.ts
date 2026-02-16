@@ -36,7 +36,13 @@ export class Login {
           sessionStorage.setItem("token",this.token)
           sessionStorage.setItem("userDetails",JSON.stringify(this.userDetails))
           alert("Login successful");
-          this.route.navigate(['/']);
+          if(res.existingUser.role=="Admin"){
+            this.route.navigateByUrl('/admin')
+          }
+          else{
+            this.route.navigateByUrl('/')
+          }
+          
         },
 
         error: (err) => {

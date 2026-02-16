@@ -58,4 +58,27 @@ export class Apiservice {
     return this.http.delete(`${this.baseURL}/api/deleteDownload/${id}`,this.appendToken()
     );
     }
+    getUserDetailsAPI() {
+    return this.http.get(`${this.baseURL}/api/getUser`,this.appendToken()
+    );
+    }
+    updateUserDetailsAPI(reqBody:any){
+    return this.http.put(`${this.baseURL}/api/updateUser`,reqBody,this.appendToken()
+    );
+    }
+    getAllUsersAPI() {
+    return this.http.get(`${this.baseURL}/api/getAllUsers`,this.appendToken()
+    );
+    }
+    getDownloadListAPI() {
+    return this.http.get(`${this.baseURL}/api/getDownloadList`,this.appendToken()
+    );
+    }
+    addTestimonyAPI(reqBody:any){
+    return this.http.post(`${this.baseURL}/api/addTestimony`,reqBody,this.appendToken())
+   }
+   getAllTestimonyAPI() {
+    return this.http.get(`${this.baseURL}/api/getAllTestimony`,this.appendToken()
+    );
+    }
 }

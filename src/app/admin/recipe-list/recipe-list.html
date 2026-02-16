@@ -1,13 +1,12 @@
 <div class="row g-0 admin-wrapper">
-  <!-- Sidebar -->
+  
   <div class="col-2 bg-primary min-vh-100">
     <app-sidebar></app-sidebar>
   </div>
 
-  <!-- Content -->
+  
   <div class="col-10 admin-content">
 
-    <!-- Title + Add Button -->
     <div class="d-flex justify-content-between align-items-center mb-4">
       <h3 class="page-title m-0">Recipe List</h3>
 
@@ -41,16 +40,17 @@
         </thead>
 
         <tbody>
-          <tr>
-            <td>1</td>
-            <td><strong>Classic Margherita Pizza</strong></td>
+          @for (item of recipes; track $index) {
+            <tr>
+            <td>{{$index+1}}</td>
+            <td><strong>{{item.name}}</strong></td>
             <td>
               <img
-                src=""
+                [src]="item.image"
                 class="recipe-img"
               />
             </td>
-            <td>Italian</td>
+            <td>{{item.cuisine}}</td>
             <td class="text-center">
               <a
                 routerLink="/admin/recipe/edit/1"
@@ -62,6 +62,7 @@
               </button>
             </td>
           </tr>
+          }
         </tbody>
       </table>
     </div>

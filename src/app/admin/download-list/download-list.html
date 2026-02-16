@@ -12,20 +12,24 @@
           <tr>
             <th>#</th>
             <th>Recipe</th>
+            <th>RecipeId</th>
             <th>Cuisine</th>
             <th class="text-center">Downloads</th>
           </tr>
         </thead>
 
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>Kerala Sadhya</td>
-            <td>Kerala</td>
+          @for (item of downloads; track $index) {
+            <tr>
+            <td>{{$index+1}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.recipeId.slice(15).toUpperCase()}}</td>
+            <td>{{item.cuisine}}</td>
             <td class="text-center">
-              <span class="badge bg-success px-3">120</span>
+              <span class="badge bg-success px-3">{{item.count}}</span>
             </td>
           </tr>
+          }
         </tbody>
       </table>
     </div>

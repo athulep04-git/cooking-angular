@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Sidebar } from "../sidebar/sidebar";
 import { RouterLink } from '@angular/router';
+import { Apiservice } from '../../services/apiservice';
 
 @Component({
   selector: 'app-recipe-list',
@@ -8,6 +9,22 @@ import { RouterLink } from '@angular/router';
   templateUrl: './recipe-list.html',
   styleUrl: './recipe-list.css',
 })
-export class RecipeList {
-
+export class RecipeList implements OnInit{
+  recipes:any=[]
+constructor(private api:Apiservice){}
+  ngOnInit(): void {
+    this.getAllRecipes()
+  }
+  getAllRecipes(){
+    this.api.getRecipesAPI().subscribe({
+      next:(res:any)=>{
+        console.log(res);
+        this.recipes=res.response
+      },
+      error:(err)=>{
+        console.log(err);
+        
+      }
+    })
+  }
 }
