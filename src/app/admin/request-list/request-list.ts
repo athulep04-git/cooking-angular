@@ -26,4 +26,12 @@ constructor(private api:Apiservice){}
       }
     })
   }
+  updateTestimonyStatus(id:any,status:any){
+    this.api.updateTestimonyAPI(id,status).subscribe({
+      next:(res:any)=>{
+        console.log(res);
+        this.getAllTestimony()
+      }
+    })
+  }
 }

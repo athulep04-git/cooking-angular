@@ -136,53 +136,24 @@
 
     <div class="row g-4">
 
-
-      <div class="col-lg-4 col-md-6">
+@for (item of testimony; track $index) {
+<div class="col-lg-4 col-md-6">
         <div class="card h-100 shadow-sm testimonial-card">
           <div class="card-body">
             <p class="text-muted fst-italic">
-              “CookWithMe made cooking fun again. The recipes are super easy and taste amazing.”
+              "{{item.message}}"
             </p>
 
             <hr>
 
-            <h6 class="fw-bold mb-0">Ananya R</h6>
-            <small class="text-muted">Home Cook</small>
+            <h6 class="fw-bold mb-0">{{item.username}}</h6>
+            <small class="text-muted">{{item.profession}}</small>
           </div>
         </div>
       </div>
+}
+      
 
-
-      <div class="col-lg-4 col-md-6">
-        <div class="card h-100 shadow-sm testimonial-card">
-          <div class="card-body">
-            <p class="text-muted fst-italic">
-              “As a beginner, I finally feel confident in the kitchen. Highly recommended!”
-            </p>
-
-            <hr>
-
-            <h6 class="fw-bold mb-0">Rahul S</h6>
-            <small class="text-muted">College Student</small>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="col-lg-4 col-md-6">
-        <div class="card h-100 shadow-sm testimonial-card">
-          <div class="card-body">
-            <p class="text-muted fst-italic">
-              “Love the variety and clean design. New recipes every week keep me excited.”
-            </p>
-
-            <hr>
-
-            <h6 class="fw-bold mb-0">Meera K</h6>
-            <small class="text-muted">Food Enthusiast</small>
-          </div>
-        </div>
-      </div>
 
     </div>
 

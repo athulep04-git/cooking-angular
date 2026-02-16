@@ -81,4 +81,12 @@ export class Apiservice {
     return this.http.get(`${this.baseURL}/api/getAllTestimony`,this.appendToken()
     );
     }
+    updateTestimonyAPI(id:any,status:any){
+    return this.http.put(`${this.baseURL}/api/UpdateTestimony/${id}?status=${status}`,{}
+    );
+    }
+    getApprovedTestimonyAPI() {
+    return this.http.get(`${this.baseURL}/api/getApprovedTestimony`,this.appendToken()
+    );
+    }
 }
