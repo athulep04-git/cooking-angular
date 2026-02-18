@@ -53,11 +53,11 @@
             <td>{{item.cuisine}}</td>
             <td class="text-center">
               <a
-                routerLink="/admin/recipe/edit/1"
+                routerLink='/admin/recipe/edit/{{item._id}}'
                 class="btn btn-outline-primary btn-sm me-2"
                 >✎</a
               >
-              <button class="btn btn-outline-danger btn-sm">
+              <button (click)="deleteRecipe(item._id)" class="btn btn-outline-danger btn-sm">
                 🗑
               </button>
             </td>

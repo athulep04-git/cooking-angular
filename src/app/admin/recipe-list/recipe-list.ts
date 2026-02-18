@@ -27,4 +27,12 @@ constructor(private api:Apiservice){}
       }
     })
   }
+  deleteRecipe(id:any){
+    this.api.deleteRecipeAPI(id).subscribe({
+      next:(res:any)=>{
+        console.log(res);
+        this.getAllRecipes()
+      }
+    })
+  }
 }

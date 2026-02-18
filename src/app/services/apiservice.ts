@@ -89,4 +89,16 @@ export class Apiservice {
     return this.http.get(`${this.baseURL}/api/getApprovedTestimony`,this.appendToken()
     );
     }
+
+    addRecipeAPI(reqBody:any){
+      return this.http.post(`${this.baseURL}/api/addRecipe`,reqBody)
+    }
+
+    updateRecipeAPI(id:any,reqBody:any){
+      return this.http.put(`${this.baseURL}/api/updateRecipe/${id}`,reqBody)
+    }
+
+    deleteRecipeAPI(id:any){
+      return this.http.delete(`${this.baseURL}/api/deleteRecipe/${id}`)
+    }
 }
