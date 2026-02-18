@@ -101,4 +101,11 @@ export class Apiservice {
     deleteRecipeAPI(id:any){
       return this.http.delete(`${this.baseURL}/api/deleteRecipe/${id}`)
     }
+
+    getDashboardCountsAPI(){
+    return this.http.get(`${this.baseURL}/api/dashboardCount`);
+    }
+
+
+
 }
