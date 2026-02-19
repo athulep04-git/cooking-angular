@@ -2,14 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import { Sidebar } from "../sidebar/sidebar";
 import { RouterLink } from '@angular/router';
 import { Apiservice } from '../../services/apiservice';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @Component({
   selector: 'app-recipe-list',
-  imports: [Sidebar,RouterLink],
+  imports: [Sidebar,RouterLink,NgxPaginationModule],
   templateUrl: './recipe-list.html',
   styleUrl: './recipe-list.css',
 })
 export class RecipeList implements OnInit{
+  p: number = 1;
   recipes:any=[]
 constructor(private api:Apiservice){}
   ngOnInit(): void {

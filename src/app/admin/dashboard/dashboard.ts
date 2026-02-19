@@ -1,10 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Sidebar } from "../sidebar/sidebar";
 import { Apiservice } from '../../services/apiservice';
+import { Calender } from "../calender/calender";
+import { Graph } from "../graph/graph";
+
 
 @Component({
   selector: 'app-dashboard',
-  imports: [Sidebar],
+  imports: [Sidebar, Calender, Graph],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css',
 })

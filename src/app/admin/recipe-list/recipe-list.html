@@ -40,7 +40,7 @@
         </thead>
 
         <tbody>
-          @for (item of recipes; track $index) {
+          @for (item of recipes | paginate: { itemsPerPage: 10, currentPage: p }; track $index ) {
             <tr>
             <td>{{$index+1}}</td>
             <td><strong>{{item.name}}</strong></td>
@@ -65,6 +65,7 @@
           }
         </tbody>
       </table>
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
     </div>
 
   </div>

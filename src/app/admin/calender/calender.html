@@ -1,1 +1,4 @@
-<p>calender works!</p>
+<mat-card class="demo-inline-calendar-card">
+  <mat-calendar [(selected)]="selected"></mat-calendar>
+</mat-card>
+<h2 class="mt-5">Selected date: {{selected() | date:'short'}}</h2>
